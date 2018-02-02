@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/frame"
+        android:layout_height="wrap_content">
+
+        <TextureView
+            android:id="@+id/texture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btn_takepicture"
+            android:layout_alignParentTop="true"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+
+    <SeekBar
+        android:id="@+id/seekBar_green"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:visibility="invisible"
+        android:minHeight="6dip"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:maxHeight="6dip"
+        android:background="@android:color/transparent"
+        android:layout_toStartOf="@+id/imageButton_green" />
+
+    <ImageButton
+        android:id="@+id/imageButton_green"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/green"
+        android:layout_marginEnd="15dp"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp" />
+
+
+    <SeekBar
+        android:id="@+id/seekBar_red"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="93dp"
+        android:visibility="invisible"
+        android:minHeight="6dip"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:maxHeight="6dip"
+        android:background="@android:color/transparent"
+        android:layout_toStartOf="@+id/imageButton_red" />
+
+    <ImageButton
+        android:id="@+id/imageButton_red"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/red"
+        android:background="@null"
+        android:layout_marginEnd="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="80dp" />
+
+
+
+    <SeekBar
+        android:id="@+id/seekBar_effect"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="168dp"
+        android:visibility="invisible"
+        android:minHeight="6dip"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:maxHeight="6dip"
+        android:background="@android:color/transparent"
+        android:layout_toStartOf="@+id/imageButton_effect" />
+
+    <ImageButton
+        android:id="@+id/imageButton_effect"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/effect"
+        android:layout_marginEnd="15dp"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="155dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar_ss"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="243dp"
+        android:minHeight="6dip"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:maxHeight="6dip"
+        android:visibility="invisible"
+        android:background="@android:color/transparent"
+        android:layout_toStartOf="@+id/imageButton_effect" />
+
+    <ImageButton
+        android:id="@+id/imageButton_ss"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/shutter"
+        android:layout_marginEnd="15dp"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="230dp" />
+
+
+    <SeekBar
+        android:id="@+id/seekBar_iso"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="318dp"
+        android:visibility="invisible"
+        android:minHeight="6dip"
+        android:paddingTop="10px"
+        android:paddingBottom="10px"
+        android:maxHeight="6dip"
+        android:background="@android:color/transparent"
+        android:layout_toStartOf="@+id/imageButton_effect" />
+
+    <ImageButton
+        android:id="@+id/imageButton_iso"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/iso"
+        android:layout_marginEnd="15dp"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="305dp" />
+
+
+
+
+
+
+
+
+
+
+    <ImageButton
+        android:id="@+id/btn_takepicture"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:background="@null"
+        android:src="@drawable/camera" />
+
+    <EditText
+        android:id="@+id/textView_g"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:singleLine="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@+id/imageButton_green"
+        android:layout_toStartOf="@+id/imageButton_ss"
+        android:text="0" />
+
+
+    <EditText
+        android:id="@+id/textView_r"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:singleLine="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@+id/imageButton_red"
+        android:layout_toStartOf="@+id/imageButton_ss"
+        android:text="0" />
+
+
+    <EditText
+        android:id="@+id/textView_e"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:singleLine="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@+id/imageButton_effect"
+        android:layout_toStartOf="@+id/imageButton_ss"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/textView_ss"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:singleLine="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@+id/imageButton_ss"
+        android:layout_toStartOf="@+id/imageButton_ss"
+        android:text="0" />
+
+
+    <EditText
+        android:id="@+id/textView_iso"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:singleLine="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@+id/imageButton_iso"
+        android:layout_toStartOf="@+id/imageButton_ss"
+        android:text="0" />
+
+
+</RelativeLayout>
+

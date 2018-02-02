@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.iotina.iotina_blue">
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera2.full" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Mqtt Service -->
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+
+
+        <activity
+            android:name=".connect.app.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="fullUser">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!--
+
+        <activity android:name=".Camera.Camera"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+         -->
+
+
+
+
+
+
+
+        <activity
+            android:name=".connect.app.MainHelpActivity"
+            android:label="@string/title_activity_mainhelp"
+            android:parentActivityName=".connect.app.MainActivity"
+            android:screenOrientation="fullUser">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.MainActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.InfoActivity"
+            android:label="@string/title_activity_info"
+            android:parentActivityName=".connect.app.MainActivity"
+            android:screenOrientation="fullUser">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.MainActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.CommonHelpActivity"
+            android:parentActivityName=".connect.app.InfoActivity"
+            android:screenOrientation="fullUser">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.InfoActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.UartActivity"
+            android:label="@string/title_activity_uart"
+            android:screenOrientation="fullUser"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.MainActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.PinIOActivity"
+            android:label="@string/title_activity_pin_io"
+            android:screenOrientation="fullUser">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.MainActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.ControllerActivity"
+            android:label="@string/title_activity_controller"
+            android:parentActivityName=".connect.app.MainActivity"
+            android:screenOrientation="fullUser">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.MainActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.PadActivity"
+            android:label="@string/title_activity_pad"
+            android:parentActivityName=".connect.app.ControllerActivity"
+            android:screenOrientation="fullUser">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.ControllerActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.settings.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".connect.app.MainActivity"
+            android:screenOrientation="fullUser" />
+        <activity
+            android:name=".connect.app.update.NotificationActivity"
+            android:label="@string/dfu_feature_title" />
+
+        <service android:name=".app.update.DfuService" />
+
+        <activity
+            android:name=".connect.app.settings.ConnectedSettingsActivity"
+            android:label="@string/title_activity_connected_settings" />
+        <activity
+            android:name=".connect.app.BeaconActivity"
+            android:label="@string/title_activity_beacon"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".connect.app.ColorPickerActivity"
+            android:label="@string/title_activity_color_picker"
+            android:parentActivityName=".connect.app.ControllerActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.ControllerActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.settings.MqttUartSettingsActivity"
+            android:label="@string/title_activity_mqtt"
+            android:parentActivityName=".connect.app.UartActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.UartActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.settings.MqttUartSettingsCodeReaderActivity"
+            android:label="@string/title_activity_mqtt_uart_settings_code_reader"
+            android:parentActivityName=".connect.app.settings.MqttUartSettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.settings.MqttUartSettingsActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.neopixel.NeopixelActivity"
+            android:label="@string/title_activity_neopixel"
+            android:parentActivityName=".connect.app.MainActivity"
+            android:screenOrientation="fullUser">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.MainActivity" />
+        </activity>
+        <activity
+            android:name=".connect.app.neopixel.NeopixelColorPickerActivity"
+            android:theme="@style/AppTheme.NoActionBarDialog" />
+        <activity
+            android:name=".connect.app.neopixel.NeopixelBoardSelectorActivity"
+            android:theme="@style/AppTheme.NoActionBarDialog" />
+        <activity
+            android:name=".connect.app.neopixel.NeopixelBoardTypeActivity"
+            android:theme="@style/AppTheme.NoActionBarDialog" />
+        <activity
+            android:name=".connect.app.neopixel.NeopixelHelpActivity"
+            android:parentActivityName=".connect.app.neopixel.NeopixelActivity"
+            android:screenOrientation="fullUser">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iotina.iotina_blue.connect.app.neopixel.NeopixelActivity" />
+        </activity>
+
+
+        <provider
+            android:name=".connect.utils.LegacyCompatFileProvider"
+            android:authorities="com.iotina.iotina_blue.connect.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+
+        </provider>
+    </application>
+
+</manifest>
